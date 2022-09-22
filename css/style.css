@@ -2,6 +2,8 @@
 
 :root{
 	--base-text-color: #666;
+	--base-text-light: #fff;
+	--primary-color: #1e598c; /* 자주 사용되는 색상 */ 
 }
 
 *{
@@ -19,18 +21,26 @@ body{
 	color : var(--base-text-color);
 	
 }
+
+ul{
+	list-style-type : none; /*list 점 없애기  */
+} 
+
+
 .d-none{
 	display: none;
 }
 
 
+
 .material-symbols-outlined {
-		  font-variation-settings:
-		  'FILL' 0,
-		  'wght' 400,
-		  'GRAD' 0,
-		  'opsz' 48
-		}
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+ 
 
 .container{
 	max-width: 1000px;
@@ -72,11 +82,88 @@ header{
 	top:0; 
 }
 
-.slogan-text{ /*slogan 가운데로  */
-	margin: 230px auto 0;
+.slogan_text{ /*slogan 가운데로  */
+	margin: 90px auto 0;
 	width: 533px; /*원본파일 크기*/
-	height: auto ;
+	height: 243px ;
 }
+
+/*=============section=============*/
+.system-bg{
+ 	background-image: url("../images/system_bg.jpg");
+	background-repeat: repeat-x;  /* 가로방항으로 채울때 화면커져도 계속 가로로 커짐  */
+	background-size: cover; /* 작은 배경사진을 늘려서 채워 넣는다 */
+	overflow: hidden;
+}
+
+.title{
+	text-align: center;
+	font-size: 1.5rem; /* 30크기를  */
+	font-weight: 500;
+	color: var(--title-text-color);
+	border-bottom: 1px solid var(--title-text-color);
+	margin: 2.5rem 0 0 0;  /* 50px을 rem으로 */
+	padding :  0 0 .5rem 0;  /* 패딩쓰거나 부모요소에 overflow 위에꺼 밀고나가지 않도록 */
+}
+
+.sub-title{
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--primary-color);
+	background-color: var(--primary-color);
+	text-align: center;
+	width: 30% ; /*1000px의 크기 20px= 15rem + */
+	margin: 0 auto;
+	padding: .5rem 0;
+}
+
+
+.sytem-list{
+	display: flex;
+	column-gap: 1rem;
+	margin: 3rem 0;
+}
+
+.system-list li{
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.system-list li:hover .overlay{
+	display: flex;  /* flex는 기본 blcok inline-flex : 컨테이너 한 줄에 있다*/
+}
+.system-list .overlay{
+	background-color: rgba(0, 0, 0, .3rem);
+	color: var();
+	width: 100%;
+	height: 100%
+	
+}
+
+.overlay{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.over-title{
+	font-size: 1.5rem;
+}
+
+
+.over-tilte + .material-symbols-outlined {
+	font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
 
 
 
