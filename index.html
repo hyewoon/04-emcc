@@ -65,10 +65,48 @@
 		</article>
 		<article>
 			<div class="container">
-				<h3 class="title">생산제품</h3>
-				<p class="sub-title">
-					2023년 신제품, 지능형 <strong>텔레모스 시스템</strong>
-				</p>
+					<h3 class="title">생산제품</h3>
+					<p class="sub-title">2023년 신제품, 지능형 <strong>텔레모스 시스템</strong></p>
+				<div class="new-item pos-relative">
+					<img src="images/product.png" alt="23 신제품 " />
+					<button type="button" class=" rounded-rect">자세히보기</button>
+					<div class = "item-detail pos-absolute">
+						<span id="close" class="pos-absolute">닫기</span>
+						<div class="detail-content">
+							<div class="img-detail"> 
+								<div class="big-img">
+									<img alt="picsum" src="http://picsum.photos/id/1/100">
+								</div>
+								<ul class="small-img">
+									<li> <img alt="picsum" src="http://picsum.photos/id/1/100">  </li>
+									<li> <img alt="picsum" src="http://picsum.photos/id/1/100">  </li>
+									<li> <img alt="picsum" src="http://picsum.photos/id/1/100">  </li>
+								</ul>
+							</div>
+							<div class="text-detail">
+								<ul>
+									<li>제품명:</li>
+									<li>출시일: </li>
+									<li>제품명</li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+					<script>
+						$(function(){
+							$("#detail").click(function(){
+								$(".item-detail").removeClass("slow");
+							})
+							$("#close").click(function(){
+								$(".item-detail").addClass("fast");
+							})
+						})
+					
+					</script>
+				</div>
+				<!-- new-item -->
+				<!--
 				<div class="carousel">
 					<div class="prev">
 						<span class="material-symbols-outlined"> navigate_before </span>
@@ -86,19 +124,25 @@
 						<span></span>
 					</div>
 				</div>
+ 						-->
 				<!-- /.carousel -->
-
 			</div>
 		</article>
 	</section>
-	<aside>
+	<aside class ="aside-bg">
 		<h2 class="d-none"></h2>
 		<div class="container">
 			<h3 class="catch-title">(주)이미그룹</h3>
-			<p class="catch-desc"></p>
-			<div>
+			<p class="catch-desc">
+			<span class ="w500"> 사람과 자연 모두가 행복한 세상</span>  <br /> <span class="w300">이미가 만들어가고 있는 세상</span> 
+			
+			</p>
+		</div>
+	</aside>
+		<div class="extras">
+			<div class="container">
 				<div class="contact">
-					<a href="tel:+820626700300"></a>
+					<a href="tel:+820626700300">062)670-0300</a>
 				</div>
 				<div class="scroll-top">
 					<a href="#top"> <img src="images/btn_top.gif" alt="go top" />
@@ -106,7 +150,6 @@
 				</div>
 			</div>
 		</div>
-	</aside>
 	<footer>
 		<div class="container">
 			<h3>
@@ -117,7 +160,7 @@
 			</p>
 			<p>고객상담전화: 1588-0300 팩스 : 062-376-0308 이메일</p>
 			<p>
-				<strong>emcc</strong>&copy
+				<strong>emcc</strong>&copy;2022. all right reserved.
 			</p>
 		</div>
 	</footer>

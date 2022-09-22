@@ -3,7 +3,10 @@
 :root{
 	--base-text-color: #666;
 	--base-text-light: #fff;
+	/*--base-text-dark: #000; */
+	
 	--primary-color: #1e598c; /* 자주 사용되는 색상 */ 
+	
 }
 
 *{
@@ -26,6 +29,10 @@ ul{
 	list-style-type : none; /*list 점 없애기  */
 } 
 
+a{
+	color: inherit;
+	text-decoration: none;
+}
 
 .d-none{
 	display: none;
@@ -100,8 +107,8 @@ header{
 	text-align: center;
 	font-size: 1.5rem; /* 30크기를  */
 	font-weight: 500;
-	color: var(--title-text-color);
-	border-bottom: 1px solid var(--title-text-color);
+	color: var(--primary-color);
+	border-bottom: 1px solid var(--primary-color);
 	margin: 2.5rem 0 0 0;  /* 50px을 rem으로 */
 	padding :  0 0 .5rem 0;  /* 패딩쓰거나 부모요소에 overflow 위에꺼 밀고나가지 않도록 */
 }
@@ -109,16 +116,17 @@ header{
 .sub-title{
 	font-size: 1rem;
 	font-weight: 500;
-	color: var(--primary-color);
+	color:var(--base-text-light) ;
 	background-color: var(--primary-color);
 	text-align: center;
-	width: 30% ; /*1000px의 크기 20px= 15rem + */
+	width: 18rem ; /*1000px의 크기 20px= 15rem + */
 	margin: 0 auto;
 	padding: .5rem 0;
+
 }
 
 
-.sytem-list{
+.system-list{
 	display: flex;
 	column-gap: 1rem;
 	margin: 3rem 0;
@@ -156,8 +164,126 @@ header{
 	font-size: 2rem;
 }
 
+.new-item{
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* align-self : 개별정렬 속성  */
+	margin: 1rem 0 2rem 0;
+}
 
+.new-item img:nth-of-type(1){  /*같은 종류 img끼리, list끼리가 child 다른 종류는 type */
+	width: 30rem;
+	object-fit: cover; /*과거 max-width */
+}
 
+.new-item button:nth-of-type(2){
+	border: 1px solid var(--base-text-dark, black);
+	border-radius: 1.5rem;
+	font-size: .8rem;
+	color: var(--base-text-dark, black);
+	padding: .5rem 1rem;
+}
+
+.item-detail{
+	width: 100%;
+	height: 100%;
+	top:0;
+	left:0;
+	overflow: hidden;
+	
+}
+
+#close{
+	right:5%;
+	top: 5%;
+	background-color: var(--close-btn-color, #000);
+	color:var(--base-text-color);
+	
+	padding:  .5rem 1rem;
+}
+/*=============aside=============*/
+.aside-bg{
+	min-height:300px;
+	background-image: url("../images/company.png"), url("../images/company_bg.jpg");
+	
+	background-size: contain, cover;
+	background-repeat: no-repeat, repeat-x;
+	background-position: right bottom, left bottom;
+	
+}
+
+aside .container{
+ 	overflow: hidden;	
+	
+}
+aside .container .catch-title{
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--special-text-color , #193f5c);
+	margin: 3rem 0 1rem 0;
+}
+
+aside .container .catch-desc{
+	font-size:1.5rem;
+	color: var(--special-text-color , #193f5c);
+}
+
+.w500{
+	font-weight: 500;
+}
+
+.w300{
+	font-weight: 300;
+}
+
+aside .container .extras{
+	margin: 0	
+}
+
+/*============extras=============*/
+.extras{
+	background-color: var(--extras-bg-color , #f5f5f5);
+	
+}
+
+.extras .container{
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact{
+	align-self: center;
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--contact-number-color, #e86708);
+	
+}
+
+.contact::before{
+	content: '';
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	background-image: url("../images.icon_call.png");
+	vertical-align: sub;
+	
+}
+
+/*============footer=============*/
+footer .container{
+	padding: 2rem;
+	text-align: center;
+
+}
+
+footer .container h3{
+	margin: 1rem 0;
+	
+}
+
+footer .container p:nth-of-type(3){
+	margin: 1rem 0 0 0;
+}
 
 
 
