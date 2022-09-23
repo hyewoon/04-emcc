@@ -119,7 +119,7 @@ header{
 	color:var(--base-text-light) ;
 	background-color: var(--primary-color);
 	text-align: center;
-	width: 18rem ; /*1000px의 크기 20px= 15rem + */
+	width: 20rem ; /*1000px의 크기 20px= 15rem + */
 	margin: 0 auto;
 	padding: .5rem 0;
 
@@ -141,15 +141,15 @@ header{
 	display: flex;  /* flex는 기본 blcok inline-flex : 컨테이너 한 줄에 있다*/
 }
 .system-list .overlay{
-	background-color: rgba(0, 0, 0, .3rem);
-	color: var();
+	background-color: rgba(0, 0, 0, .3);
+	color: var(--base-text-light);
 	width: 100%;
 	height: 100%
 	
 }
 
 .overlay{
-	display: none;
+	display:none; 
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -171,12 +171,12 @@ header{
 	margin: 1rem 0 2rem 0;
 }
 
-.new-item img:nth-of-type(1){  /*같은 종류 img끼리, list끼리가 child 다른 종류는 type */
+.new-item > img:nth-of-type(1){  /*같은 종류 img끼리, list끼리가 child 다른 종류는 type */
 	width: 30rem;
 	object-fit: cover; /*과거 max-width */
 }
 
-.new-item button:nth-of-type(2){
+.new-item button:nth-of-type(1){
 	border: 1px solid var(--base-text-dark, black);
 	border-radius: 1.5rem;
 	font-size: .8rem;
@@ -190,16 +190,89 @@ header{
 	top:0;
 	left:0;
 	overflow: hidden;
+	background-color: white;
+
+	/*display :flex; */
+
+}
+
+.detail{
+	display: flex;
+	column-gap: .5rem;
 	
 }
 
+.img-detail{
+	flex: 4;
+	/*background-color: red; */
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 400px;
+	row-gap: .5rem;
+}
+.img-detail img{ /* 3000*3000사진을 줄여준다   */
+	/*max-width: 100%;  */
+	width: 100%;
+	object-fit : cover;  
+}
+
+.big-img{
+	flex: 7;
+	overflow: hidden;
+}
+
+.small-img{
+	flex: 3;
+	display: flex;
+	overflow: hidden;
+	column-gap: .5rem;
+}
+
+.small-img li{
+	flex: 1; 
+	overflow: hidden;  
+}
+
+/*.small-img li img{
+	
+} */
+
+.small-img li:hover{
+	flex: 1; 
+	overflow: hidden;  
+	border: 2px solid transparent;
+	box-sizing : border-box;
+}
+.text-detail{
+	flex: 6;
+	 background-color: #efefef;
+	
+
+}
+.text-detail p {
+ margin : 1rem;
+}
+
+.text-detail ul{
+	list-style: sqaure;
+	
+	/*list-style-type: square;
+	list-style-positon: inside;  이것을 줄여서*/
+	margin: 0 0 0 3rem;
+}
+
 #close{
-	right:5%;
-	top: 5%;
+	position :absolute;
+	right:2%;
+	top: 2%;
 	background-color: var(--close-btn-color, #000);
 	color:var(--base-text-color);
-	
-	padding:  .5rem 1rem;
+	font-size : 2rem;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	text-align: center;
 }
 /*=============aside=============*/
 .aside-bg{
@@ -261,10 +334,10 @@ aside .container .extras{
 
 .contact::before{
 	content: '';
-	display: inline-block;
+	display:inline-block;
 	width: 28px;
 	height: 28px;
-	background-image: url("../images.icon_call.png");
+	background-image: url("../images/icon_call.png");
 	vertical-align: sub;
 	
 }

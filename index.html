@@ -42,69 +42,76 @@
 				<h3 class="title">물관리 시스템</h3>
 				<p class="sub-title">water management system</p>
 				<ul class = "system-list">
-					<li class = "pos-relavtive">
+					<li class = "pos-relative">
 						<div class="overlay pos-absolute">
 							<p class="over-title">재해관리</p>
 							<span class="material-symbols-outlined"> add_circle </span>
-						</div> <img src="images/system_img1.jpg" alt="재해관리" />
+						</div> 
+						<img src="images/system_img1.jpg" alt="재해관리" />
+						
 					</li>
-					<li class = "pos-relavtive">
+					<li class = "pos-relative">
 						<div class="overlay pos-absolute">
 							<p class="over-title">수질관리</p>
 							<span class="material-symbols-outlined"> add_circle </span>
-						</div> <img src="images/system_img2.jpg" alt="수질관리" />
+						 </div>
+						 	<img src="images/system_img2.jpg" alt="수질관리" />
 					</li>
-					<li class = "pos-relavtive">
+					<li class = "pos-relative">
 						<div class="overlay pos-absolute">
 							<p class="over-title">6차산업</p>
 							<span class="material-symbols-outlined"> add_circle </span>
-						</div> <img src="images/system_img3.jpg" alt="6차산업" />
+						 </div>
+						 	<img src="images/system_img3.jpg" alt="6차산업" />
 					</li>
 				</ul>
 			</div>
 		</article>
 		<article>
+	
 			<div class="container">
 					<h3 class="title">생산제품</h3>
 					<p class="sub-title">2023년 신제품, 지능형 <strong>텔레모스 시스템</strong></p>
 				<div class="new-item pos-relative">
 					<img src="images/product.png" alt="23 신제품 " />
-					<button type="button" class=" rounded-rect">자세히보기</button>
-					<div class = "item-detail pos-absolute">
-						<span id="close" class="pos-absolute">닫기</span>
-						<div class="detail-content">
-							<div class="img-detail"> 
-								<div class="big-img">
-									<img alt="picsum" src="http://picsum.photos/id/1/100">
-								</div>
+					<button type="button" class=" rounded-rect" id="open">자세히보기</button>
+					<div class ="item-detail pos-absolute d-none" >
+						<div id ="close">&times;</div>
+						<div class="detail">
+							<div class ="img-detail ">
+							<div class ="big-img">
+							 	<img src="http://picsum.photos/id/1/3000/3000" alt="picsum" id ="img1"/>
+							</div>
 								<ul class="small-img">
-									<li> <img alt="picsum" src="http://picsum.photos/id/1/100">  </li>
-									<li> <img alt="picsum" src="http://picsum.photos/id/1/100">  </li>
-									<li> <img alt="picsum" src="http://picsum.photos/id/1/100">  </li>
+									<li> <img alt="picsum" src="http://picsum.photos/id/1/2000/2000"/>  </li>
+									<li> <img alt="picsum" src="http://picsum.photos/id/10/2000/2000"/>  </li>
+									<li> <img alt="picsum" src="http://picsum.photos/id/100/2000/2000"/>  </li>
 								</ul>
 							</div>
 							<div class="text-detail">
-								<ul>
-									<li>제품명:</li>
-									<li>출시일: </li>
-									<li>제품명</li>
-								</ul>
+								<p>모델명: H12345</p>
+								<p>생산일: 2022.9.25</p>
+								<p>제조책임자:김 </p>	
+								<p>기능: 정수, 정화기능</p>	
+								<p>컬러: 화이트 베이지 </p>	
+								<p>크기 : 500</p>	
+								<p>특징 </p>	
+									<ul>
+										<li>제품명</li>
+										<li>제품코드</li>
+										<li>제품명</li>
+									</ul>	
 							</div>
-							
-						</div>
+						</div>	
 					</div>
-					<script>
-						$(function(){
-							$("#detail").click(function(){
-								$(".item-detail").removeClass("slow");
-							})
-							$("#close").click(function(){
-								$(".item-detail").addClass("fast");
-							})
-						})
-					
-					</script>
 				</div>
+			</div>
+						
+				<!-- 	
+				  .rounded -rect or #detil 버튼 클릭시
+				  팝업으로 제품의 상세/추가정보 출력한다단. 자바스크립트로
+				  $() document.querySelector() : 첫번째 일치하는 요소를 css 선택자로
+				      document.qeurySelectorAll(): 모두 일치하는 요소를 선택->집합
 				<!-- new-item -->
 				<!--
 				<div class="carousel">
@@ -134,7 +141,7 @@
 		<div class="container">
 			<h3 class="catch-title">(주)이미그룹</h3>
 			<p class="catch-desc">
-			<span class ="w500"> 사람과 자연 모두가 행복한 세상</span>  <br /> <span class="w300">이미가 만들어가고 있는 세상</span> 
+			<span class ="w300"> 사람과 자연 모두가 행복한 세상</span>  <br /> <span class="w500">이미가 만들어가고 있는 세상</span> 
 			
 			</p>
 		</div>
@@ -164,7 +171,47 @@
 			</p>
 		</div>
 	</footer>
-	<script src="script/main.js"></script>
+	<script>
+		window.addEventListener("DOMContentLoaded", function (){
+		  	//	
+		  	const closeBT = document.querySelector("#close");
+		  	const openBT = document.querySelector("#open");
+		  	const itemDIV = document.querySelector(".item-detail");
+		  	
+		  	openBT.addEventListener("click", function(){
+		  		itemDIV.classList.remove("d-none");  // Dom document object model 를 구조를 출력
+		  		
+		  	})
+		  	closeBT.addEventListener("click", function(){
+		  		itemDIV.classList.add("d-none");  // Dom document object model 를 구조를 출력
+		  		
+		  	}); //이벤트리스너 요즘 사용 
+		  	
+		  	//1.
+		  	const smallIMG = document.querySelectorAll(" .small-img li");
+		 	const img1=document.querySelector("#img1");	
+		 	
+		 	
+		 	smallIMG[0].addEventListener("click", function(){
+					//.getAttribute  setAttribute
+		  	  img1.setAttribute("src","http://picsum.photos/id/1/2000/2000")
+		 		
+		 	})
+		 	
+		 	smallIMG[1].addEventListener("click", function(){
+		  	  img1.setAttribute("src","http://picsum.photos/id/10/2000/2000")
+		 		
+		 	})
+		 	
+		 	smallIMG[2].addEventListener("click", function(){
+		  	  img1.setAttribute("src","http://picsum.photos/id/100/2000/2000")
+		 		
+		 	})
+		  	
+		 })	
+		
+	</script>
+	<!-- <script src="script/main.js"></script> -->
 </body>
 </html>
 
