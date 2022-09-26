@@ -18,6 +18,7 @@
 </head>
 <body>
 	<h1 class="d-none">EMCC이미그룹</h1>
+	<div class = "screen  d-none"></div>
 	<header class="main-header">
 		<div class="container pos-relative">
 			<div class="logo">
@@ -241,6 +242,7 @@
 		 	//const openSidePanel = document.querySelector(".burger");
 		 	const toggleSidePanel = document.querySelector("#closePanel");
 		 	const SidePanel = document.querySelector("#sidePanel");
+		 	const screen = document.querySelector(".screen");
 		
 		 	
 		 	toggleSidePanel.addEventListener("click", function (){
@@ -249,13 +251,15 @@
 		 			SidePanel.classList.remove("collapsed")
 		 			toggleSidePanel.innerHTML = "&gt";  
 		 			//toggleSidePanel.innerText = ">";  
+		 		    screen.classList.remove("d-none");
 		 		 
 		 			
 		 		}else {
 		 		 console.log("없음")
 		 			SidePanel.classList.add("collapsed")
-		 			toggleSidePanel.innerHTML = "&lt";  //dir 탐색
+		 			toggleSidePanel.innerHTML = "&lt";  //
 		 			//toggleSidePanel.innerText = "<";  
+		 		    screen.classList.add("d-none");
 		 		 	
 		 		}
 		 		//SidePanel.classList.remove("collapsed")
