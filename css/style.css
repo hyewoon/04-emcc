@@ -63,6 +63,10 @@ a{
 	position: absolute;
 }
 
+.pos-fixed{
+	position: fixed;
+}
+
 button{
 	background-color: transparent;
 	border: 0;
@@ -72,7 +76,7 @@ button{
 
 /*=============header==================*/
 
-header{
+header.main-header{ 
 	background-image : url("../images/visual_bg.jpg");
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -274,6 +278,54 @@ header{
 	border-radius: 50%;
 	text-align: center;
 }
+/*=============sidepanel=============*/
+
+#sidePanel.collapsed{
+	right: -300px; /*  300px-25px화면 바깥으로 갔다가 그대로 들어옴 */
+	/*overflow :hidden; */ 
+}
+
+#sidePanel{
+	background-color: dodgerblue;
+	 /* background-image :  */
+	min-width: 300px;
+	height: 100%;  /*모니터 화면(부모)에 100% --> 수정해서 줄여나가기 */
+	right: 0;
+	top: 0;
+	color: var(--text-color-light, white); /*  */
+	transition: all .3x; /*애니메이션 효과 접었다 펴기  collapse 접었단 펴기*/
+	
+}
+
+#sidePanel .container{
+	background-color: dodgerblue;
+	height: 100%
+}
+
+.side-header { /* 정렬하고 싶다  */
+	padding: 0 0 0 1rem;
+	text-transform: uppercase; /* 대문자  */
+}
+
+.side-header h2{
+	font-size: 2rem;
+}
+.side-header h2 + p{
+	font-size: 1.25rem;
+}
+
+#closePanel{
+	position: absolute;
+	right:calc(15rem - 25px); /*다른 단위 계산하기 연산자 사이 한칸씩 띄우기 */
+	top: calc(50% + 25px);
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 1.5rem;
+	color: var(--base-color-dark, black);
+	background-color: var(--text-color-light, white);
+	box-shadow: .2rem .2rem 10px rgba(0, 0, 0, .4)/* x y shadow outside color  그림자 효과*/
+}  /*   rgba투명한 검은색   */
 /*=============aside=============*/
 .aside-bg{
 	min-height:300px;

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <title>(주)이미그룹</title>
-<link href="images/favicon.png" rel=shortcuticon">
+<link href="images/favicon.png" rel="shortcuticon">
 <link
 	href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
@@ -18,7 +18,7 @@
 </head>
 <body>
 	<h1 class="d-none">EMCC이미그룹</h1>
-	<header>
+	<header class="main-header">
 		<div class="container pos-relative">
 			<div class="logo">
 				<a href="#"> <img src="images/gnb_logo.png" alt="emcc" />
@@ -136,6 +136,36 @@
 			</div>
 		</article>
 	</section>
+	<div id ="sidePanel"  class ="pos-fixed collapsed">
+	<!--  -->
+		<div class = "container">
+				<header class="side-header">
+				<h2>EMCC로고</h2>
+				<p>(주)이미그룹</p>
+				<nav class="side-nav">
+					<ul id="snb">
+						<li><a href="#">home</a></li>
+						<li><a href="#">product</a></li>
+						<li><a href="#">customer</a></li>
+						<li><a href="#">contact</a></li>
+						<li><a href="#">about</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section>
+				<a href="#">id/pw 찾기</a> | <a href="#">고객센터</a>
+			</section>
+			<aside>
+				<button id = "closePanel">&lt;</button>
+			</aside>
+			<footer>
+				&copy; emcc. 2022.<br> by <a href="mailto:hanul7797@naver.com">hanul</a>
+			</footer>
+		</div>
+	</div>
+		
+				
+	
 	<aside class ="aside-bg">
 		<h2 class="d-none"></h2>
 		<div class="container">
@@ -207,6 +237,35 @@
 		  	  img1.setAttribute("src","http://picsum.photos/id/100/2000/2000")
 		 		
 		 	})
+		 	
+		 	//const openSidePanel = document.querySelector(".burger");
+		 	const toggleSidePanel = document.querySelector("#closePanel");
+		 	const SidePanel = document.querySelector("#sidePanel");
+		
+		 	
+		 	toggleSidePanel.addEventListener("click", function (){
+		 		if(SidePanel.classList.contains("collapsed")){
+		 		 console.log("있음")
+		 			SidePanel.classList.remove("collapsed")
+		 			toggleSidePanel.innerHTML = "&gt";  
+		 			//toggleSidePanel.innerText = ">";  
+		 		 
+		 			
+		 		}else {
+		 		 console.log("없음")
+		 			SidePanel.classList.add("collapsed")
+		 			toggleSidePanel.innerHTML = "&lt";  //dir 탐색
+		 			//toggleSidePanel.innerText = "<";  
+		 		 	
+		 		}
+		 		//SidePanel.classList.remove("collapsed")
+		 	})
+		  	
+		 /*	closeSidePanel.addEventListener("click", function (){
+		 		SidePanel.classList.add("collapsed")
+		 	})
+		 	*/
+		 
 		  	
 		 })	
 		
